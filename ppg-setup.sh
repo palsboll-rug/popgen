@@ -2,6 +2,10 @@
 
 echo 'Preparing for "Principles of Population Genetics in Natural Populations" course'
 
+echo 'Retrieving files from GitHub'
+
+git clone https://github.com/palsboll-rug/popgen.git
+
 echo 'Making directories'
 
 rm -r 	/home/$USER/practical_01 /home/$USER/practical_02 \
@@ -21,7 +25,8 @@ mkdir 	/home/$USER/practical_01 /home/$USER/practical_02 \
 		
 
 #Need to copy data to practicals
-#Need to compile microsat_convert.c
+
+gcc -o ~scripts/microsat_convert ~popgen/microsat_convert.c -lm
 
 cd ~
 echo 'Backing up your .bash_profile'
@@ -38,5 +43,9 @@ echo 'module load ms Seq-Gen Structure' >> >> ~/.bash_profile
 echo 'Resourcing your .bash_profile'
 
 source ~/.bash_profile
+
+echo 'Making certain all scripts can be executed'
+
+chmod 755 ~scripts/*.sh
 
 echo 'DONE!'
