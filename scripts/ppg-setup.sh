@@ -27,6 +27,8 @@ mkdir 	-p /home/$USER/practical_01 /home/$USER/practical_02 \
 
 #Need to copy data to practicals and assignments
 
+echo 'Copying data to relevant folders'
+
 cp ~/popgen/assignement_02/* ~/assignment_02/data/
 cp ~/popgen/practical_04/* ~/practical_04/data/
 cp ~/popgen/practical_05/* ~/practical_05/data/
@@ -42,13 +44,11 @@ echo 'Backing up your .bash_profile'
 cp ~/.bash_profile ~/.bash_profile_back_up
 
 echo 'Modifying your .bash_profile'
-
-echo 'expoort'
 		
 echo 'export PATH=/home/$USER/scripts:$PATH' >> ~/.bash_profile
 
 #Need to load R=modules as well
-echo 'module load ms Seq-Gen Structure module load R/4.0.0-foss-2020a \
+echo 'module load ms Structure R/4.0.0-foss-2020a \
 		GDAL/3.0.4-foss-2020a-Python-3.8.2' >> >> ~/.bash_profile
 echo 'ssh pg-node222' >> >> ~/.bash_profile
 
@@ -56,15 +56,20 @@ echo 'Resourcing your .bash_profile'
 
 source ~/.bash_profile
 
-cp ~/popgen/ppg-setup-install-r-packages.r ~/scripts/ppg-setup-install-r-packages.r
+echo "Copying and compiling scripts and helper programs"
 
-echo 'Making certain all scripts can be executed'
+cp ~/popgen/ppg_setup_install_r_packages.r ~/scripts/ppg_setup_install_r_packages.r
+gcc -o ~/popgen/scripts/ms_usat_conversion ~/popgen/ms_usat_conversion.c -lm
 
-chmod 755 ~scripts/*.sh
+echo 'Changing permissions for scripts can be executed'
+
+chmod 755 ~scripts/*
 
 #R environment
 
-mkdir ~/R/x86_64-pc-linux-gnu-library/4.0
+echo 'Setting up the R environment and installing R packages'
+
+mkdir -fp ~/R/x86_64-pc-linux-gnu-library/4.0
 echo 'R_LIBS_USER=R/x86_64-pc-linux-gnu-library/4.0' >> ~/.Renviron
 
 source ~/.Renviron
@@ -80,6 +85,6 @@ source ~/.Rprofile
 
 #install needed R packages
 
-~/scripts/ppg-setup-install-r-packages.r
+~/scripts/ppg_setup_install_r_packages.r
 
 echo 'DONE!'
