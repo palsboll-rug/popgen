@@ -40,15 +40,12 @@ echo 'export PATH=/home/$USER/popgen/scripts:$PATH' >> ~/.bash_profile
 echo 'module load ms Structure R/4.0.0-foss-2020a GDAL/3.0.4-foss-2020a-Python-3.8.2' >> ~/.bash_profile
 
 echo '~/popgen/scripts/load_libs.r' >> ~/.bash_profile
-echo 'ssh pg-node222' >> ~/.bash_profile
-
-echo 'Resourcing your .bash_profile'
 
 #R environment
 
 echo 'Setting up the R environment and installing R packages'
 
-mkdir -fp ~/R/x86_64-pc-linux-gnu-library/4.0
+mkdir -p ~/R/x86_64-pc-linux-gnu-library/4.0
 echo 'R_LIBS_USER=R/x86_64-pc-linux-gnu-library/4.0' >> ~/.Renviron
 
 source ~/.Renviron
@@ -66,6 +63,9 @@ source ~/.Rprofile
 
 ~/scripts/ppg_setup_install_r_packages.r
 
+echo 'Resourcing your .bash_profile'
+
+echo 'ssh pg-node222' >> ~/.bash_profile
 source ~/.bash_profile
 
 echo 'DONE!'
