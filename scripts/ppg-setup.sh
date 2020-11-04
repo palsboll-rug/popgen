@@ -37,15 +37,12 @@ echo 'Modifying your .bash_profile'
 echo 'export PATH=/home/$USER/popgen/scripts:$PATH' >> ~/.bash_profile
 
 #Need to load R=modules as well
-echo 'module load ms Structure R/4.0.0-foss-2020a \
-		GDAL/3.0.4-foss-2020a-Python-3.8.2' >> ~/.bash_profile
+echo 'module load ms Structure R/4.0.0-foss-2020a GDAL/3.0.4-foss-2020a-Python-3.8.2' >> ~/.bash_profile
 
 echo '~/popgen/scripts/load_libs.r' >> ~/.bash_profile
 echo 'ssh pg-node222' >> ~/.bash_profile
 
 echo 'Resourcing your .bash_profile'
-
-source ~/.bash_profile
 
 #R environment
 
@@ -68,5 +65,7 @@ source ~/.Rprofile
 #install needed R packages
 
 ~/scripts/ppg_setup_install_r_packages.r
+
+source ~/.bash_profile
 
 echo 'DONE!'
