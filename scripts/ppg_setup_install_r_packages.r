@@ -1,3 +1,3 @@
 #!/usr/bin/env Rscript
 
-install.packages("diveRsity", "adegenet", "ggplot2")
+install.packages("diveRsity", "adegenet", "ggplot2". "genepop")
