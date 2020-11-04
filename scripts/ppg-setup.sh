@@ -2,8 +2,6 @@
 
 echo 'Preparing for "Principles of Population Genetics in Natural Populations" course'
 
-rm -rf popgen
-
 echo 'Removing old directories'
 
 for folder in $(ls ~/popgen | egrep 'assign*|mini*|prac*'); 
@@ -36,7 +34,7 @@ cp ~/.bash_profile ~/.bash_profile_back_up
 
 echo 'Modifying your .bash_profile'
 		
-echo 'export PATH=/home/$USER/scripts:$PATH' >> ~/.bash_profile
+echo 'export PATH=/home/$USER/popgen/scripts:$PATH' >> ~/.bash_profile
 
 #Need to load R=modules as well
 echo 'module load ms Structure R/4.0.0-foss-2020a \
