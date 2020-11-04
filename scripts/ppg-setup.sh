@@ -2,10 +2,7 @@
 
 echo 'Preparing for "Principles of Population Genetics in Natural Populations" course'
 
-echo 'Retrieving files from GitHub'
-
-rm -r popgen
-git clone https://github.com/palsboll-rug/popgen.git
+rm -rf popgen
 
 echo 'Removing old directories'
 
@@ -19,15 +16,20 @@ echo 'Making directories'
 
 for folder in $(ls ~/popgen | egrep 'assign*|mini*|prac*'); 
 do 
-	mv -r ~/popgen/$folder ~/$older; 
+	mv ~/popgen/$folder ~/$older; 
 
 done
 
 #compile own ms.microsat 2 genepop program 
 
-gcc -o ~/scripts/microsat_convert ~/popgen/ms_usat_conversion.c -lm
+echo "Copying and compiling scripts and helper programs"
 
-cd ~
+gcc -o ~/popgen/scripts/ms_usat_conversion ~/popgen/scripts/ms_usat_conversion.c -lm
+
+echo 'Changing permissions for scripts can be executed'
+
+chmod 755 ~/popgen/scripts/*
+
 echo 'Backing up your .bash_profile'
 
 cp ~/.bash_profile ~/.bash_profile_back_up
@@ -40,21 +42,12 @@ echo 'export PATH=/home/$USER/scripts:$PATH' >> ~/.bash_profile
 echo 'module load ms Structure R/4.0.0-foss-2020a \
 		GDAL/3.0.4-foss-2020a-Python-3.8.2' >> ~/.bash_profile
 
-echo '~/scripts/load_libs.r' >> ~/.bash_profile
+echo '~/popgen/scripts/load_libs.r' >> ~/.bash_profile
 echo 'ssh pg-node222' >> ~/.bash_profile
 
 echo 'Resourcing your .bash_profile'
 
 source ~/.bash_profile
-
-echo "Copying and compiling scripts and helper programs"
-
-cp ~/popgen/scripts/ppg_setup_install_r_packages.r ~/scripts/ppg_setup_install_r_packages.r
-gcc -o ~/scripts/ms_usat_conversion ~/popgen/scripts/ms_usat_conversion.c -lm
-
-echo 'Changing permissions for scripts can be executed'
-
-chmod 755 ~scripts/*
 
 #R environment
 
