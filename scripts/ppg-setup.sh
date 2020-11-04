@@ -65,7 +65,7 @@ source ~/.Rprofile
 
 echo 'Resourcing your .bash_profile'
 
-echo 'ssh pg-node222' >> ~/.bash_profile
+#echo 'ssh pg-node222' >> ~/.bash_profile
 source ~/.bash_profile
 
 echo 'DONE!'

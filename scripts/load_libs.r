@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
 
-library(diveRsity)
-library(adegenet)
-library(ggplot2)
+library("diveRsity")
+library("genepop")
+library("ggplot2")
