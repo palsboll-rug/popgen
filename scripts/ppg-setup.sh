@@ -50,6 +50,7 @@ echo 'export PATH=/home/$USER/scripts:$PATH' >> ~/.bash_profile
 #Need to load R=modules as well
 echo 'module load ms Structure R/4.0.0-foss-2020a \
 		GDAL/3.0.4-foss-2020a-Python-3.8.2' >> >> ~/.bash_profile
+
 echo 'ssh pg-node222' >> >> ~/.bash_profile
 
 echo 'Resourcing your .bash_profile'
@@ -58,8 +59,8 @@ source ~/.bash_profile
 
 echo "Copying and compiling scripts and helper programs"
 
-cp ~/popgen/ppg_setup_install_r_packages.r ~/scripts/ppg_setup_install_r_packages.r
-gcc -o ~/popgen/scripts/ms_usat_conversion ~/popgen/ms_usat_conversion.c -lm
+cp ~/popgen/scripts/ppg_setup_install_r_packages.r ~/scripts/ppg_setup_install_r_packages.r
+gcc -o ~/scripts/ms_usat_conversion ~/popgen/scripts/ms_usat_conversion.c -lm
 
 echo 'Changing permissions for scripts can be executed'
 
