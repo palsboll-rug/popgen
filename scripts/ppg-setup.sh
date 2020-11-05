@@ -47,22 +47,22 @@ echo 'Setting up the R environment and installing R packages'
 mkdir -p ~/R/x86_64-pc-linux-gnu-library/4.0
 mv ~/popgen/scripts/renviron ~/.Renviron
 
-source ~/.Renviron
+source .Renviron
 
 mv ~/popgen/scripts/rprofile ~/.Rprofile
 
-source ~/.Rprofile
+source .Rprofile
 
 echo 'Resourcing your .bash_profile'
 
 #echo 'ssh pg-node222' >> ~/.bash_profile
-source ~/.bash_profile
+source .bash_profile
 
 #install needed R packages
 
 echo 'Installing needed R packages'
 Rscript ~/popgen/scripts/ppg_setup_install_r_packages.r
 
-source ~/.bash_profile
+source .bash_profile
 
 echo 'DONE!'
