@@ -38,7 +38,7 @@ echo 'export PATH=/home/$USER/popgen/scripts:$PATH' >> ~/.bash_profile
 
 #adding load modules to .bash_profile
 
-echo 'module load ms Structure R/4.0.0-foss-2020a GDAL/3.0.4-foss-2020a-Python-3.8.2' >> ~/.bash_profile
+echo 'module load ms Structure R VCFtools' >> ~/.bash_profile
 
 #R environment
 
