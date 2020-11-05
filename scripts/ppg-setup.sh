@@ -63,5 +63,6 @@ source ~/.bash_profile
 echo 'Installing needed R packages'
 Rscript ~/popgen/scripts/ppg_setup_install_r_packages.r
 
+source ~/.bash_profile
 
 echo 'DONE!'
