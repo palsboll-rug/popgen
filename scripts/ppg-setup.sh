@@ -55,7 +55,7 @@ source ~/.Rprofile
 
 #install needed R packages
 
-Rscript ~/scripts/ppg_setup_install_r_packages.r
+Rscript ~/popgen/scripts/ppg_setup_install_r_packages.r
 
 echo 'Resourcing your .bash_profile'
 
