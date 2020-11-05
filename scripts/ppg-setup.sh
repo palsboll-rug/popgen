@@ -55,7 +55,6 @@ source .Rprofile
 
 echo 'Resourcing your .bash_profile'
 
-#echo 'ssh pg-node222' >> ~/.bash_profile
 source .bash_profile
 
 #install needed R packages
@@ -63,6 +62,7 @@ source .bash_profile
 echo 'Installing needed R packages'
 Rscript ~/popgen/scripts/ppg_setup_install_r_packages.r
 
+echo 'ssh pg-node222' >> ~/.bash_profile
 source .bash_profile
 
 echo 'DONE!'
