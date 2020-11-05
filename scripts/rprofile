@@ -1,0 +1,6 @@
+cat(".Rprofile: Setting R repository:")
+repo = getOption("repos") 
+# set up the server from which you will download the package.
+repo["CRAN"] = "https://mirror.lyrahosting.com/CRAN" 
+options(repos = repo)
+rm(repo)
