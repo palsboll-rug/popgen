@@ -53,13 +53,15 @@ mv ~/popgen/scripts/rprofile ~/.Rprofile
 
 source ~/.Rprofile
 
-#install needed R packages
-
-Rscript ~/popgen/scripts/ppg_setup_install_r_packages.r
-
 echo 'Resourcing your .bash_profile'
 
 #echo 'ssh pg-node222' >> ~/.bash_profile
 source ~/.bash_profile
+
+#install needed R packages
+
+echo 'Installing needed R packages'
+Rscript ~/popgen/scripts/ppg_setup_install_r_packages.r
+
 
 echo 'DONE!'
