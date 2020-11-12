@@ -4,21 +4,23 @@ echo 'Preparing for "Principles of Population Genetics in Natural Populations" c
 
 echo 'Removing old directories'
 
-for folder in $(ls ~/popgen | egrep 'assign*|mini*|prac*'); 
-do 
-	rm -r ~/$folder; 
+for folder in $(ls ~/popgen | egrep 'assign*|mini*|prac*');
+do
+	rm -r ~/$folder;
 
 done
 
 echo 'Making directories'
 
-for folder in $(ls ~/popgen | egrep 'assign*|mini*|prac*'); 
-do 
-	mv ~/popgen/$folder ~/$folder; 
+for folder in $(ls ~/popgen | egrep 'assign*|mini*|prac*');
+do
+	mv ~/popgen/$folder ~/$folder;
 
 done
 
-#compile own ms.microsat 2 genepop program 
+mkdir practical_01 #empty folder not contained in the git repository
+
+#compile own ms.microsat 2 genepop program
 
 echo "Copying and compiling scripts and helper programs"
 
@@ -33,7 +35,7 @@ echo 'Backing up your .bash_profile'
 cp ~/.bash_profile ~/.bash_profile_back_up
 
 echo 'Modifying your .bash_profile'
-		
+
 echo 'export PATH=/home/$USER/popgen/scripts:$PATH' >> ~/.bash_profile
 
 #adding load modules to .bash_profile
