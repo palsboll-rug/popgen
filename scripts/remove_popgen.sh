@@ -17,3 +17,5 @@ echo "removing popgen folder"
 rm -r popgen
 
 mv ~/.bash_profile_back_up ~/.bash_profile
+
+source .bash_profile
